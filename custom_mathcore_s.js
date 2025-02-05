@@ -1,6 +1,6 @@
 LearnosityAmd.define([
     'underscore-v1.5.2',
-    'vendor/scoring/src/vendor/mathcore'
+    'mathcore'
 ], function ( _, mathcore) {
     'use strict';
 
@@ -13,7 +13,7 @@ LearnosityAmd.define([
         var i, temp,
             isValid = true;
         for (i = 0; i < this.question.specs.length; i++) {
-            temp = mathcore.evaluateVerbose(this.question.specs[i], this.response);
+            temp = mathcore.validate?.(this.question.specs[i], this.response) ?? mathcore.evaluateVerbose?.(this.question.specs[i], this.response);
             isValid = isValid && temp.result;
         }
         return isValid;
