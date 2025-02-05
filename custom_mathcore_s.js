@@ -1,6 +1,6 @@
 LearnosityAmd.define([
     'underscore-v1.5.2',
-    'vendor/mathcore'
+    'vendor/scoring/src/vendor/mathcore'
 ], function ( _, mathcore) {
     'use strict';
 
